@@ -2,7 +2,11 @@
   <div class="home">
     <h1>ANS Operator Search</h1>
     <OperatorSearch @search="handleSearch" />
-    <OperatorList :operators="operators" :loading="loading" :error="error" />
+    <OperatorList 
+      :operators="operators || []" 
+      :loading="loading" 
+      :error="error"
+    />
   </div>
 </template>
 
@@ -33,20 +37,45 @@ const handleSearch = async (query) => {
         _t: Date.now()
       }
     });
-    operators.value = response.data;
+    // Garante que operators seja sempre um array
+    operators.value = Array.isArray(response.data) ? response.data : [];
   } catch (err) {
     error.value = err.response?.data?.message || 
                  err.message || 
                  'Erro desconhecido ao buscar operadoras';
+    operators.value = []; // Reseta para array vazio
     
-    console.error('Erro completo:', {
+    console.error('Detalhes do erro:', {
       status: err.response?.status,
       data: err.response?.data,
-      message: err.message,
-      stack: err.stack
+      message: err.message
     });
   } finally {
     loading.value = false;
   }
 };
 </script>
+
+<style scoped>
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+}
+</style>

@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.example.scraper.service.PdfScraperServiceTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.941 s -- in com.example.scraper.service.PdfScraperServiceTest

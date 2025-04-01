@@ -9,12 +9,9 @@
       "name": "Search Operators",
       "request": {
         "method": "GET",
-        "header": [],
         "url": {
-          "raw": "http://localhost:8080/api/operators/search?query=saude",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "8080",
+          "raw": "{{base_url}}/api/operators/search?query=saude",
+          "host": ["{{base_url}}"],
           "path": ["api", "operators", "search"],
           "query": [
             {
@@ -23,50 +20,48 @@
             }
           ]
         }
-      },
-      "response": []
+      }
     },
     {
       "name": "Get Top Operators by Expense (Quarter)",
       "request": {
         "method": "GET",
-        "header": [],
         "url": {
-          "raw": "http://localhost:8080/api/data/top-operators/quarter?category=EVENTOS/SINISTROS CONHECIDOS OU AVISADOS DE ASSISTÊNCIA A SAÚDE MÉDICO HOSPITALAR",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "8080",
+          "raw": "{{base_url}}/api/data/top-operators/quarter?category=EVENTOS%2FSINISTROS%20CONHECIDOS%20OU%20AVISADOS%20DE%20ASSISTÊNCIA%20A%20SAÚDE%20MÉDICO%20HOSPITALAR",
+          "host": ["{{base_url}}"],
           "path": ["api", "data", "top-operators", "quarter"],
           "query": [
             {
               "key": "category",
-              "value": "EVENTOS/SINISTROS CONHECIDOS OU AVISADOS DE ASSISTÊNCIA A SAÚDE MÉDICO HOSPITALAR"
+              "value": "EVENTOS%2FSINISTROS%20CONHECIDOS%20OU%20AVISADOS%20DE%20ASSISTÊNCIA%20A%20SAÚDE%20MÉDICO%20HOSPITALAR"
             }
           ]
         }
-      },
-      "response": []
+      }
     },
     {
       "name": "Get Top Operators by Expense (Year)",
       "request": {
         "method": "GET",
-        "header": [],
         "url": {
-          "raw": "http://localhost:8080/api/data/top-operators/year?category=EVENTOS/SINISTROS CONHECIDOS OU AVISADOS DE ASSISTÊNCIA A SAÚDE MÉDICO HOSPITALAR",
-          "protocol": "http",
-          "host": ["localhost"],
-          "port": "8080",
+          "raw": "{{base_url}}/api/data/top-operators/year?category=EVENTOS%2FSINISTROS%20CONHECIDOS%20OU%20AVISADOS%20DE%20ASSISTÊNCIA%20A%20SAÚDE%20MÉDICO%20HOSPITALAR",
+          "host": ["{{base_url}}"],
           "path": ["api", "data", "top-operators", "year"],
           "query": [
             {
               "key": "category",
-              "value": "EVENTOS/SINISTROS CONHECIDOS OU AVISADOS DE ASSISTÊNCIA A SAÚDE MÉDICO HOSPITALAR"
+              "value": "EVENTOS%2FSINISTROS%20CONHECIDOS%20OU%20AVISADOS%20DE%20ASSISTÊNCIA%20A%20SAÚDE%20MÉDICO%20HOSPITALAR"
             }
           ]
         }
-      },
-      "response": []
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
     }
   ]
 }

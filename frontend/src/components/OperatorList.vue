@@ -1,23 +1,20 @@
 <template>
-  <div class="operator-list">
-    <div v-if="error" class="error-message">
-      {{ error }}
-    </div>
+  <div class="operator-container">
+    <div v-if="error" class="error-message">{{ error }}</div>
     <div v-else-if="loading" class="loading">Loading...</div>
-    <div v-else-if="operators.length === 0" class="no-results">
-      No operators found
-    </div>
-    <ul v-else class="operator-items">
+    <div v-else-if="!operators || operators.length === 0" class="no-results">No operators found</div>
+    
+    <ul v-else class="operator-list">
       <li v-for="operator in operators" :key="operator.id" class="operator-item">
         <div class="operator-info">
-          <h3>{{ operator.trade_name || operator.legal_name }}</h3>
-          <p v-if="operator.legal_name && operator.legal_name !== operator.trade_name">
-            Legal Name: {{ operator.legal_name }}
+          <h3>{{ operator.tradeName || operator.legalName }}</h3>
+          <p v-if="operator.legalName && operator.legalName !== operator.tradeName">
+            <strong>Legal Name:</strong> {{ operator.legalName }}
           </p>
-          <p>Registry: {{ operator.registry }}</p>
-          <p>CNPJ: {{ operator.cnpj }}</p>
-          <p>Modality: {{ operator.modality }}</p>
-          <p>Location: {{ operator.city }}/{{ operator.state }}</p>
+          <p><strong>Registry:</strong> {{ operator.registry }}</p>
+          <p><strong>CNPJ:</strong> {{ operator.cnpj }}</p>
+          <p><strong>Modality:</strong> {{ operator.modality }}</p>
+          <p><strong>Location:</strong> {{ operator.city }}/{{ operator.state }}</p>
         </div>
       </li>
     </ul>
@@ -29,7 +26,7 @@ export default {
   props: {
     operators: {
       type: Array,
-      required: true
+      default: () => []
     },
     loading: {
       type: Boolean,
@@ -40,49 +37,57 @@ export default {
       default: null
     }
   }
-}
+};
 </script>
 
 <style scoped>
+.operator-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.error-message, .loading, .no-results {
+  text-align: center;
+  padding: 15px;
+  font-size: 16px;
+  width: 100%;
+}
+
 .error-message {
   color: #dc3545;
   background: #f8d7da;
-  padding: 10px;
-  border-radius: 4px;
-  margin-bottom: 20px;
-  text-align: center;
+  border-radius: 8px;
 }
 
 .operator-list {
-  margin-top: 20px;
-}
-
-.loading, .no-results {
-  text-align: center;
-  padding: 20px;
-  color: #666;
-}
-
-.operator-items {
   list-style: none;
   padding: 0;
+  width: 100%;
+  max-width: 600px;
 }
 
 .operator-item {
   background: #fff;
   border: 1px solid #ddd;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 15px;
-  margin-bottom: 10px;
-  transition: box-shadow 0.3s;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 
 .operator-item:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transform: translateY(-3px);
 }
 
 .operator-info h3 {
-  margin-top: 0;
+  margin: 0 0 10px;
   color: #2c3e50;
 }
 
