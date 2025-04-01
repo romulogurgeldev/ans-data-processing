@@ -1,2 +1,11 @@
-com/example/scraper/ScraperApplication.class
+com/example/scraper/controller/ScraperController.class
+com/example/scraper/service/PdfToCsvService.class
+com/example/scraper/config/CorsConfig.class
+com/example/scraper/controller/PdfTransformController.class
+com/example/scraper/controller/DataController.class
 com/example/scraper/service/PdfScraperService.class
+com/example/scraper/config/DatabaseConfig.class
+com/example/scraper/ScraperApplication.class
+com/example/scraper/controller/OperatorController.class
+com/example/scraper/config/GlobalExceptionHandler.class
+com/example/scraper/service/DataImportService.class

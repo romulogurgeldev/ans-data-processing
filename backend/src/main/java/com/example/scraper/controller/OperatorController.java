@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/operators")
+@RequestMapping("/api")
 public class OperatorController {
     private final JdbcTemplate jdbcTemplate;
 
@@ -20,7 +20,7 @@ public class OperatorController {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    @GetMapping("/search")
+    @GetMapping("/operators/search")
     public List<Map<String, Object>> searchOperators(@RequestParam String query) {
         String searchQuery = "%" + query.toLowerCase() + "%";
         return jdbcTemplate.queryForList("""

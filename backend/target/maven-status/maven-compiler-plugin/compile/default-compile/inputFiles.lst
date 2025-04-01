@@ -1,2 +1,11 @@
 /home/romulogurgeldev/Projects/ans-data-processing/backend/src/main/java/com/example/scraper/ScraperApplication.java
+/home/romulogurgeldev/Projects/ans-data-processing/backend/src/main/java/com/example/scraper/config/CorsConfig.java
+/home/romulogurgeldev/Projects/ans-data-processing/backend/src/main/java/com/example/scraper/config/DatabaseConfig.java
+/home/romulogurgeldev/Projects/ans-data-processing/backend/src/main/java/com/example/scraper/config/GlobalExceptionHandler.java
+/home/romulogurgeldev/Projects/ans-data-processing/backend/src/main/java/com/example/scraper/controller/DataController.java
+/home/romulogurgeldev/Projects/ans-data-processing/backend/src/main/java/com/example/scraper/controller/OperatorController.java
+/home/romulogurgeldev/Projects/ans-data-processing/backend/src/main/java/com/example/scraper/controller/PdfTransformController.java
+/home/romulogurgeldev/Projects/ans-data-processing/backend/src/main/java/com/example/scraper/controller/ScraperController.java
+/home/romulogurgeldev/Projects/ans-data-processing/backend/src/main/java/com/example/scraper/service/DataImportService.java
 /home/romulogurgeldev/Projects/ans-data-processing/backend/src/main/java/com/example/scraper/service/PdfScraperService.java
+/home/romulogurgeldev/Projects/ans-data-processing/backend/src/main/java/com/example/scraper/service/PdfToCsvService.java

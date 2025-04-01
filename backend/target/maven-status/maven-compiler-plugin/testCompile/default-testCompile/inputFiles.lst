@@ -1,1 +1,3 @@
 /home/romulogurgeldev/Projects/ans-data-processing/backend/src/test/java/com/example/scraper/ScraperApplicationTests.java
+/home/romulogurgeldev/Projects/ans-data-processing/backend/src/test/java/com/example/scraper/controller/OperatorControllerTest.java
+/home/romulogurgeldev/Projects/ans-data-processing/backend/src/test/java/com/example/scraper/service/PdfScraperServiceTest.java
